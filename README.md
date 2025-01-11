@@ -114,7 +114,9 @@ This GitHub Actions workflow will automatically build and push the image every t
 ## Minikube Setup
 1. **Start Minikube**
     First, start your Minikube cluster with the following command:
-    ``` minikube start ```
+    ``` 
+    minikube start 
+    ```
 2. **Create Kubernetes Manifests**
    The Kubernetes deployment is defined in the following YAML files:
    **deployment.yaml:Defines the deployment configuration for the containerized app.**
