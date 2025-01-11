@@ -56,7 +56,9 @@ The Dockerfile has been written to containerize the application. It includes the
 ### Build & Run with Docker
 1. **Build the Docker Image:**
    After ensuring that Docker is installed, build the Docker image:
+   ```
    docker build -t book-list-app .
+   ```
 
 2. **Run the Docker Container**
    Once the image is built, run the container
