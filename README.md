@@ -114,11 +114,12 @@ This GitHub Actions workflow will automatically build and push the image every t
 ## Minikube Setup
 1. **Start Minikube**
     First, start your Minikube cluster with the following command:
-    minikube start
+    ``` minikube start ```
 2. **Create Kubernetes Manifests**
    The Kubernetes deployment is defined in the following YAML files:
    **deployment.yaml:Defines the deployment configuration for the containerized app.**
 
+    ```
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -138,9 +139,10 @@ This GitHub Actions workflow will automatically build and push the image every t
             image: ghcr.io/geektums/book-list-app:latest
             ports:
                 - containerPort: 3000
-
+    ```
    **service.yaml:Exposes the app as a service**
 
+    ```
     apiVersion: v1
     kind: Service
     metadata:
@@ -154,12 +156,15 @@ This GitHub Actions workflow will automatically build and push the image every t
         port: 3000
         targetPort: 3000
         nodePort: 30001
+    ```
 
 3. **Deploy to MiniKube**
    Apply the manifests to deploy the app and expose it as a service:
   
+  ```
    kubectl apply -f deployment.yaml
    kubectl apply -f service.yaml
+   ```
 
 4. **Access the App**
    Once deployed, access the application at http://localhost:30001 (NodePort) or use Minikube’s built-in service access commands.
