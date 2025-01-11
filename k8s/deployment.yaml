@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-list-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: book-list-app
+  template:
+    metadata:
+      labels:
+        app: book-list-app
+    spec:
+      containers:
+      - name: book-list-app
+        image: geektums/book-list-app:latest
+        ports:
+        - containerPort: 3000
