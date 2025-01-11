@@ -76,6 +76,7 @@ The GitHub Actions workflow is defined in .github/workflows/docker.yml. It inclu
 3. **GitHub Actions Workflow Configuration**
 The following snippet defines the key actions used in the CI/CD pipeline:
 
+   ```
     name: CI/CD Pipeline
 
     on:
@@ -104,6 +105,7 @@ The following snippet defines the key actions used in the CI/CD pipeline:
        - name: Push Docker Image to GitHub Container Registry
          run: |
           docker push ghcr.io/geektums/book-list-app:latest
+    ```
 
 This GitHub Actions workflow will automatically build and push the image every time code is pushed to the main branch.
 
