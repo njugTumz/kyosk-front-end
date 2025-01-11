@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Book List App
 
-## Getting Started
+This project is a simple book list application built using **Next.js** and **TypeScript**. The app displays a static list of books, showcasing best practices in frontend development with a focus on automation, containerization, and deployment using modern DevOps practices.
 
-First, run the development server:
+## Table of Contents
+- [Application Setup](#application-setup)
+- [Containerization](#containerization)
+- [CI/CD Automation](#cicd-automation)
+- [Kubernetes Deployment (Minikube)](#kubernetes-deployment-minikube)
+- [Documentation](#documentation)
+- [Challenges & Decisions](#challenges-decisions)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Application Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Node.js** (v18 or later)
+- **Docker** (for containerization)
+- **Minikube** (for Kubernetes deployment)
+- **GitHub** (for the GitHub Actions CI/CD pipeline)
 
-## Learn More
+### Installation & Running Locally
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the Repository**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   Start by cloning the repository to your local machine.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   git clone https://github.com/your-username/book-list-app.git
+   cd book-list-app
+2. **Install Dependencies**
+   Install the required dependencies using npm or yarn.
+   npm install
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Run the App Locally**
+   npm run dev
+   The app will be available at http://localhost:3000.
