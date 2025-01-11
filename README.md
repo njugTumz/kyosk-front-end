@@ -76,33 +76,33 @@ The GitHub Actions workflow is defined in .github/workflows/docker.yml. It inclu
 3. **GitHub Actions Workflow Configuration**
 The following snippet defines the key actions used in the CI/CD pipeline:
 
-name: CI/CD Pipeline
+    name: CI/CD Pipeline
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    on:
+     push:
+      branches:
+       - main
+     pull_request:
+      branches:
+       - main
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+    jobs:
+     build:
+       runs-on: ubuntu-latest
     
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+     steps:
+       - name: Checkout repository
+         uses: actions/checkout@v2
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+       - name: Set up Docker Buildx
+         uses: docker/setup-buildx-action@v2
 
-      - name: Build Docker Image
-        run: |
+       - name: Build Docker Image
+         run: |
           docker build -t ghcr.io/geektums/book-list-app:latest .
         
-      - name: Push Docker Image to GitHub Container Registry
-        run: |
+       - name: Push Docker Image to GitHub Container Registry
+         run: |
           docker push ghcr.io/geektums/book-list-app:latest
 
 This GitHub Actions workflow will automatically build and push the image every time code is pushed to the main branch.
@@ -115,7 +115,7 @@ This GitHub Actions workflow will automatically build and push the image every t
     minikube start
 2. **Create Kubernetes Manifests**
    The Kubernetes deployment is defined in the following YAML files:
-   **deployment.yaml:** Defines the deployment configuration for the containerized app.
+   **deployment.yaml:Defines the deployment configuration for the containerized app.**
 
     apiVersion: apps/v1
     kind: Deployment
@@ -137,8 +137,7 @@ This GitHub Actions workflow will automatically build and push the image every t
             ports:
                 - containerPort: 3000
 
-   **service.yaml:**
-   Exposes the app as a service
+   **service.yaml:Exposes the app as a service**
 
     apiVersion: v1
     kind: Service
