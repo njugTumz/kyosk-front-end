@@ -103,7 +103,7 @@ const BookList: React.FC = () => {
                   <strong>Year:</strong> {selectedBook.year}
                 </p>
                 <p>
-                  <strong>Description:</strong> {selectedBook.description || "No description available."}
+                  <strong>Description:</strong> {selectedBook.description || "Coming Soon..."}
                 </p>
               </div>
               <div className="modal-footer">
