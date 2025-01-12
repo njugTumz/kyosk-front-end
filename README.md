@@ -213,10 +213,10 @@ This GitHub Actions workflow will automatically build and push the image every t
    ```
    
    <br> <br>
-   ![Alt text](./path-to-your-image/miniurl.jpg)
+   ![Alt text](./screenshots/miniurl.jpg)
 
    <br><br>
-   ![Alt text](./path-to-your-image/app_url.jpg)
+   ![Alt text](./screenshots/app_url.jpg)
 
    
 ## Documentation
