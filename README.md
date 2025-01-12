@@ -103,34 +103,44 @@ The GitHub Actions workflow is defined in .github/workflows/docker.yml. It inclu
 The following snippet defines the key actions used in the CI/CD pipeline:
 
    ```
-    name: CI/CD Pipeline
+   name: CI/CD Pipeline
 
-    on:
-     push:
+   on:
+    push:
       branches:
-       - main
-     pull_request:
+         - main
+    pull_request:
       branches:
-       - main
+         - main
 
-    jobs:
-     build:
-       runs-on: ubuntu-latest
-    
-     steps:
-       - name: Checkout repository
+   jobs:
+   build:
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Checkout code
          uses: actions/checkout@v2
 
-       - name: Set up Docker Buildx
-         uses: docker/setup-buildx-action@v2
+      - name: Set up Node.js
+         uses: actions/setup-node@v2
+         with:
+         node-version: '18'
 
-       - name: Build Docker Image
-         run: |
-          docker build -t ghcr.io/geektums/book-list-app:latest .
-        
-       - name: Push Docker Image to GitHub Container Registry
-         run: |
-          docker push ghcr.io/geektums/book-list-app:latest
+      - name: Install dependencies
+         run: npm install
+
+      - name: Build Docker image
+         run: docker build -t geektums/book-list-app .
+
+      - name: Login to Docker Hub
+         uses: docker/login-action@v2
+         with:
+         username: ${{ secrets.DOCKER_USERNAME }}
+         password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Push Docker image to Docker Hub
+         run: docker push geektums/book-list-app
+
     ```
 
 This GitHub Actions workflow will automatically build and push the image every time code is pushed to the main branch.
@@ -213,7 +223,7 @@ This GitHub Actions workflow will automatically build and push the image every t
 
 ### CI/CD Pipeline Explanation
 1. **The CI/CD pipeline is automated with GitHub Actions.**
-2. **On every push or pull request to the main branch, the app is automatically built into a Docker image and pushed to GitHub Container Registry.**
+2. **On every push or pull request to the main branch, the app is automatically built into a Docker image and pushed to Docker Container Registry.**
 
 ### Assumptions & Challenges
 The app was kept simple for quick deployment and focus on DevOps tasks.
