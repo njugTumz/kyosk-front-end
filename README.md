@@ -82,11 +82,18 @@ The Dockerfile has been written to containerize the application. It includes the
    docker build -t book-list-app .
    ```
 
+   <br> <br>
+   ![Alt text](./screenshots/docker_build.jpg)
+
 3. **Run the Docker Container**
    Once the image is built, run the container
    ```
    docker run -p 3000:3000 book-list-app
    ```
+
+   <br> <br>
+   ![Alt text](./screenshots/docker_run.jpg)
+
 The application will be available at http://localhost:3000 inside the container.
 
 ## CI/CD Automation
