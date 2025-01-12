@@ -28,7 +28,7 @@ This project is a simple book list application built using **Next.js** and **Typ
    Start by cloning the repository to your local machine.
 
    ```bash
-   git clone https://github.com/your-username/book-list-app.git
+   git clone https://github.com/njugTumz/book-list-app.git
 
 2. **Install Dependencies**
    Install the required dependencies using npm or yarn.
