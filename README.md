@@ -62,7 +62,7 @@ The Dockerfile has been written to containerize the application. It includes the
    Starts the app with npm run dev
 
 ### Build & Run with Docker
-1. **Ensure Docker Desktop is Running**
+1. **Ensure Docker Desktop is Running** <br>
    -Open Docker Desktop and ensure it is running <br>
    -Run the following commands in your terminal to verify Docker is installed and running::<br>
 
@@ -74,8 +74,8 @@ The Dockerfile has been written to containerize the application. It includes the
    docker info
    ```
 
-  -If these commands fail, reinstall Docker Desktop.
-  
+   -If these commands fail, reinstall Docker Desktop.
+
 2. **Build the Docker Image:**
    After ensuring that Docker is installed, build the Docker image:
    ```
@@ -190,8 +190,11 @@ This GitHub Actions workflow will automatically build and push the image every t
    Apply the manifests to deploy the app and expose it as a service:
   
   ```
-   kubectl apply -f deployment.yaml
-   kubectl apply -f service.yaml
+   kubectl apply -f k8s/deployment.yaml
+   ```
+
+   ```
+   kubectl apply -f k8s/service.yaml
    ```
 
 4. **Access the App**
