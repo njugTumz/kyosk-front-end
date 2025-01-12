@@ -114,7 +114,7 @@ The following snippet defines the key actions used in the CI/CD pipeline:
          - main
 
    jobs:
-   build:
+     build:
       runs-on: ubuntu-latest
 
       steps:
