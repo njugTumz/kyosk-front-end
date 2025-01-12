@@ -31,11 +31,16 @@ This project is a simple book list application built using **Next.js** and **Typ
    git clone https://github.com/njugTumz/book-list-app.git
 
 2. **Install Dependencies**
+   Navigate to the folder you have cloned the repository 
    Install the required dependencies using npm or yarn.
+   ```
    npm install
+   ```
 
 3. **Run the App Locally**
+   ```
    npm run dev
+   ```
    The app will be available at http://localhost:3000.
 
 ## Containerization
