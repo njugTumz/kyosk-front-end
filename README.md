@@ -62,13 +62,27 @@ The Dockerfile has been written to containerize the application. It includes the
    Starts the app with npm run dev
 
 ### Build & Run with Docker
-1. **Build the Docker Image:**
+1. **Ensure Docker Desktop is Running**
+   -Open Docker Desktop and ensure it is running <br>
+   -Run the following commands in your terminal to verify Docker is installed and running::<br>
+
+   ```
+   docker --version
+   ```
+
+   ```
+   docker info
+   ```
+
+  -If these commands fail, reinstall Docker Desktop.
+  
+2. **Build the Docker Image:**
    After ensuring that Docker is installed, build the Docker image:
    ```
    docker build -t book-list-app .
    ```
 
-2. **Run the Docker Container**
+3. **Run the Docker Container**
    Once the image is built, run the container
    ```
    docker run -p 3000:3000 book-list-app
