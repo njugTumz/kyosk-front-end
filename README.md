@@ -31,8 +31,10 @@ This project is a simple book list application built using **Next.js** and **Typ
    git clone https://github.com/njugTumz/kyosk-front-end.git
 
 2. **Install Dependencies**
-   Navigate to the folder you have cloned the repository:<br>
-   cd kyosk-front-end:<br>
+   <br>Navigate to the folder you have cloned the repository:
+   ```
+   cd kyosk-front-end
+   ```
    Install the required dependencies using npm or yarn.
    ```
    npm install
