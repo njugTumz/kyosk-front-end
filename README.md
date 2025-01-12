@@ -206,9 +206,19 @@ This GitHub Actions workflow will automatically build and push the image every t
    kubectl apply -f k8s/service.yaml
    ```
 
-4. **Access the App**
-   Once deployed, access the application at http://localhost:30001 (NodePort) or use Minikube’s built-in service access commands.
+4. **Access the App** <br>
+   Once deployed, access the application 
+   ```
+   minikube service book-list-app-service --url
+   ```
+   
+   <br> <br>
+   ![Alt text](./path-to-your-image/miniurl.jpg)
 
+   <br><br>
+   ![Alt text](./path-to-your-image/app_url.jpg)
+
+   
 ## Documentation
 
 ### Steps to Build and Run the Application Locally
