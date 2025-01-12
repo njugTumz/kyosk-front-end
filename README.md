@@ -148,25 +148,25 @@ This GitHub Actions workflow will automatically build and push the image every t
    **deployment.yaml:Defines the deployment configuration for the containerized app.**
 
     ```
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-    name: book-list-app
-    spec:
-    replicas: 1
-    selector:
-        matchLabels:
-        app: book-list-app
-    template:
-        metadata:
-        labels:
-            app: book-list-app
-        spec:
-        containers:
-            - name: book-list-app
-            image: ghcr.io/geektums/book-list-app:latest
-            ports:
-                - containerPort: 3000
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: book-list-app
+   spec:
+     replicas: 1
+   selector:
+     matchLabels:
+       app: book-list-app
+   template:
+     metadata:
+       labels:
+         app: book-list-app
+   spec:
+      containers:
+      - name: book-list-app
+        image: geektums/book-list-app:latest
+        ports:
+        - containerPort: 3000
     ```
    **service.yaml:Exposes the app as a service**
 
@@ -174,16 +174,15 @@ This GitHub Actions workflow will automatically build and push the image every t
     apiVersion: v1
     kind: Service
     metadata:
-    name: book-list-app-service
+     name: book-list-app-service
     spec:
-    type: NodePort
-    selector:
-        app: book-list-app
+     selector:
+      app: book-list-app
     ports:
-        - protocol: TCP
-        port: 3000
-        targetPort: 3000
-        nodePort: 30001
+     - protocol: TCP
+       port: 80
+       targetPort: 3000
+    type: NodePort
     ```
 
 3. **Deploy to MiniKube**
